@@ -1,9 +1,13 @@
-import './App.css';
+import Router from "./App/Router";
+import AppHeader from "./components/AppHeader";
+import AppFooter from "./components/AppFooter";
 
 function App() {
   return (
     <div className="App">
-      App
+      <AppHeader />
+      <Router />
+      <AppFooter />
     </div>
   );
 }
