@@ -1,6 +1,6 @@
 import { useContext, useEffect, useState } from "react";
-import calculateCartTotalPrice from "../helper/calculateCartTotalPrice";
-import { CartContext } from "../context/CartContext";
+import calculateCartTotalPrice from "../../helper/calculateCartTotalPrice";
+import { CartContext } from "../../context/CartContext";
 
 const Checkout = ({ label }) => {
   const { cart } = useContext(CartContext);
