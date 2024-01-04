@@ -1,10 +1,10 @@
 import { useContext, useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-import { CartContext } from "../context/CartContext";
-import { ProductContext } from "../context/ProductContext";
-import cartIcon from "../assets/static/cart.svg";
-import profileIcon from "../assets/static/profile.svg";
-import calculateCartTotalPrice from "../helper/calculateCartTotalPrice";
+import { CartContext } from "../../context/CartContext";
+import { ProductContext } from "../../context/ProductContext";
+import cartIcon from "../../assets/static/cart.svg";
+import profileIcon from "../../assets/static/profile.svg";
+import calculateCartTotalPrice from "../../helper/calculateCartTotalPrice";
 
 const AppHeader = () => {
   const [total, setTotal] = useState(0);

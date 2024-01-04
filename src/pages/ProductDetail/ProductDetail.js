@@ -1,6 +1,6 @@
 import { useContext, useEffect, useState } from "react";
-import Cart from "../components/Cart";
-import Checkout from "../components/Checkout";
+import Cart from "../../components/Cart/Cart";
+import Checkout from "../../components/Checkout/Checkout";
 import { CartContext } from "../../context/CartContext";
 import { useParams } from "react-router-dom";
 import { ProductContext } from "../../context/ProductContext";

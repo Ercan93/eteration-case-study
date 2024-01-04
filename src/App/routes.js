@@ -1,6 +1,6 @@
-import ProductList from "../pages/ProductList";
-import ProductDetail from "../pages/ProductDetail";
-import NotFound from "../pages/NotFound";
+import ProductList from "../pages/ProductList/ProductList";
+import ProductDetail from "../pages/ProductDetail/ProductDetail";
+import NotFound from "../pages/NotFound/NotFound";
 
 const routes = [
   {

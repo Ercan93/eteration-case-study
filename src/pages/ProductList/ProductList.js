@@ -1,11 +1,11 @@
 import { useContext, useEffect, useState } from "react";
 import { ProductContext } from "../../context/ProductContext";
-import ProductCard from "../components/ProductCard";
-import SortFilter from "../components/SortFilter";
-import CheckboxFilter from "../components/CheckboxFilter";
-import Cart from "../components/Cart";
-import Checkout from "../components/Checkout";
-import Pagination from "../components/Pagination";
+import ProductCard from "../../components/ProductCard/ProductCard";
+import SortFilter from "../../components/SortFilter/SortFilter";
+import CheckboxFilter from "../../components/CheckboxFilter/CheckboxFilter";
+import Cart from "../../components/Cart/Cart";
+import Checkout from "../../components/Checkout/Checkout";
+import Pagination from "../../components/Pagination/Pagination";
 import { SORT_VALUES } from "../../helper/constants";
 
 const ProductList = () => {
