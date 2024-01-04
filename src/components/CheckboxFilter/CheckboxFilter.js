@@ -20,9 +20,9 @@ const CheckboxFilter = ({ options, label, checked, onChange }) => {
   return (
     <div className="checkbox-filter">
       <div className="checkbox-filter-header d-flex flex-wrap align-items-center justify-content-between">
-        <p className="fs-6 text-gray mb-0">{label}</p>
+        <p className="fs-6 text-gray mb-0 mt-3">{label}</p>
       </div>
-      <div className="checkbox-filter-body bg-white rounded shadow-sm mt-1 mb-3 p-3">
+      <div className="checkbox-filter-body bg-white rounded shadow-sm mt-1 p-3">
         <input
           type="search"
           className="form-control"
