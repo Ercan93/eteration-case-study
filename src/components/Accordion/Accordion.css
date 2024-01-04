@@ -1,0 +1,17 @@
+.accordion-wrapper {
+  width: 100%;
+}
+
+.accordion-title {
+  cursor: pointer;
+}
+
+.accordion-content-wrapper {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.2s ease-out;
+}
+
+.accordion-content-wrapper.open {
+  max-height: 300px;
+}
