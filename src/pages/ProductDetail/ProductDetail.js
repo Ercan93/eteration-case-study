@@ -26,7 +26,7 @@ const ProductDetail = () => {
   }, [products]);
 
   return (
-    <div className="ProductDetail container-fluid">
+    <div className="product-detail container-fluid">
       <div className="row mt-4">
         <div className="col-12 offset-0 offset-md-1 col-md-7 bg-white shadow-sm p-3">
           <div className="row">

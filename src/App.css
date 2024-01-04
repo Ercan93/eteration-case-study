@@ -21,6 +21,10 @@
   position: relative;
   min-height: 100vh;
   background-color: #f8f9fa;
+  animation: fadein 1s;
+  -moz-animation: fadein 1s;
+  -webkit-animation: fadein 1s;
+  -o-animation: fadein 1s;
 }
 
 .App-header {
@@ -35,6 +39,13 @@
   max-height: 200px;
   min-height: 200px;
   overflow-y: auto;
+}
+
+.product-detail{
+  animation: fadein 1s;
+  -moz-animation: fadein 1s;
+  -webkit-animation: fadein 1s;
+  -o-animation: fadein 1s;
 }
 
 .product-card-img {
