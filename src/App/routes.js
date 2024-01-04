@@ -8,7 +8,7 @@ const routes = [
     element: <ProductList />,
   },
   {
-    path: "/detail/:id",
+    path: "/product/:id",
     element: <ProductDetail />,
   },
   {
