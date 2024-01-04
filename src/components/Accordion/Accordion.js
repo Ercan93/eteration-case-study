@@ -6,7 +6,7 @@ const Accordion = ({ title, children }) => {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <div className="accordion-wrapper border my-2 rounded">
+    <div className="accordion-wrapper border my-2 shadow-sm rounded">
       <div
         className={`accordion-title d-flex align-items-center justify-content-between py-2 px-3 fw-semibold ${
           isOpen ? "open" : ""
