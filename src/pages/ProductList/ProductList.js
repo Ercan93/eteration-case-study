@@ -152,7 +152,7 @@ const ProductList = () => {
             </div>
           </div>
         </div>
-        <div className="col-12 col-md-4 col-lg-3 col-xl-2">
+        <div className="col-12 col-md-4 col-lg-3 col-xl-2 d-none d-md-block">
           <div className="sticky-top sticky-sidebar">
             <Cart label="Cart" />
             <Checkout label="Checkout" />
