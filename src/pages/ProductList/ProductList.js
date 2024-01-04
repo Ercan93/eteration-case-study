@@ -1,12 +1,12 @@
 import { useContext, useEffect, useState } from "react";
-import { ProductContext } from "../context/ProductContext";
+import { ProductContext } from "../../context/ProductContext";
 import ProductCard from "../components/ProductCard";
 import SortFilter from "../components/SortFilter";
 import CheckboxFilter from "../components/CheckboxFilter";
 import Cart from "../components/Cart";
 import Checkout from "../components/Checkout";
 import Pagination from "../components/Pagination";
-import { SORT_VALUES } from "../helper/constants";
+import { SORT_VALUES } from "../../helper/constants";
 
 const ProductList = () => {
   const {
