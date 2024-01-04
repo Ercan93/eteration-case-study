@@ -2,7 +2,7 @@ import { useContext, useEffect, useState } from "react";
 import Cart from "../../components/Cart/Cart";
 import Checkout from "../../components/Checkout/Checkout";
 import { CartContext } from "../../context/CartContext";
-import { useParams } from "react-router-dom";
+import { useParams, useNavigate } from "react-router-dom";
 import { ProductContext } from "../../context/ProductContext";
 
 const ProductDetail = () => {
@@ -11,10 +11,13 @@ const ProductDetail = () => {
   const [product, setProduct] = useState({});
 
   const { id } = useParams();
+  const navigate = useNavigate();
 
   useEffect(() => {
     const product = products.find((product) => product.id === id);
+    if (!product) navigate("/404");
     setProduct(product);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [id, products]);
 
   useEffect(() => {
@@ -28,11 +31,7 @@ const ProductDetail = () => {
         <div className="col-12 offset-0 offset-md-1 col-md-7 bg-white shadow-sm p-3">
           <div className="row">
             <div className="col-12 col-md-6">
-              <img
-                src={product?.image}
-                alt="product"
-                className="w-100"
-              />
+              <img src={product?.image} alt="product" className="w-100" />
             </div>
             <div className="col-12 col-md-6">
               <p className="fs-3 mb-0">{product?.name}</p>
