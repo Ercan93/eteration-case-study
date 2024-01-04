@@ -1,5 +1,5 @@
 ## Live
-`https://eteration-case-study-erc.netlify.app/`
+[https://eteration-case-study-erc.netlify.app](https://eteration-case-study-erc.netlify.app/)
 
 # Getting Started with Create React App
 
