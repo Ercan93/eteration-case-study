@@ -7,6 +7,7 @@ import Cart from "../../components/Cart/Cart";
 import Checkout from "../../components/Checkout/Checkout";
 import Pagination from "../../components/Pagination/Pagination";
 import { SORT_VALUES } from "../../helper/constants";
+import Accordion from "../../components/Accordion/Accordion";
 
 const ProductList = () => {
   const {
@@ -68,7 +69,7 @@ const ProductList = () => {
     <div className="home container-fluid bg-light">
       <div className="row">
         <div className="offset-0 offset-lg-1 col-12 col-md-3 col-lg-2">
-          <div className="Filters sticky-top sticky-sidebar">
+          <div className="sticky-top sticky-sidebar d-none d-lg-block">
             <SortFilter
               sortValues={SORT_VALUES}
               label="Sort By"
@@ -87,6 +88,29 @@ const ProductList = () => {
               checked={filters.model}
               onChange={(e) => checkboxFilterHandler(e, "model")}
             />
+          </div>
+          <div className="d-block d-lg-none">
+            <Accordion title="Sort By">
+              <SortFilter
+                sortValues={SORT_VALUES}
+                checked={filters.sort}
+                onChange={(e) => sortFilterHandler(e)}
+              />
+            </Accordion>
+            <Accordion title="Brand">
+              <CheckboxFilter
+                options={brands}
+                checked={filters.brands}
+                onChange={(e) => checkboxFilterHandler(e, "brands")}
+              />
+            </Accordion>
+            <Accordion title="Model">
+              <CheckboxFilter
+                options={model}
+                checked={filters.model}
+                onChange={(e) => checkboxFilterHandler(e, "model")}
+              />
+            </Accordion>
           </div>
         </div>
         <div className="col-12 col-md-5 col-lg-6">
