@@ -71,6 +71,7 @@ const ProductList = () => {
         <div className="offset-0 offset-lg-1 col-12 col-md-3 col-lg-2">
           <div className="sticky-top sticky-sidebar d-none d-lg-block">
             <SortFilter
+              name="main-filter"
               sortValues={SORT_VALUES}
               label="Sort By"
               checked={filters.sort}
@@ -89,9 +90,12 @@ const ProductList = () => {
               onChange={(e) => checkboxFilterHandler(e, "model")}
             />
           </div>
+          {/* Mobile Filters */}
           <div className="d-block d-lg-none">
+            <p className="mt-2 fs-2 fw-semibold">Filters</p>
             <Accordion title="Sort By">
               <SortFilter
+                name="mobile-filter"
                 sortValues={SORT_VALUES}
                 checked={filters.sort}
                 onChange={(e) => sortFilterHandler(e)}
@@ -112,6 +116,18 @@ const ProductList = () => {
               />
             </Accordion>
           </div>
+          {/* End of Mobile Filters */}
+          {/* Mobile Cart */}
+          <div className="d-block d-md-none">
+            <p className="mb-0 mt-3 fs-2 fw-semibold">Basket</p>
+            <Accordion title="Cart">
+              <Cart />
+            </Accordion>
+            <Accordion title="Checkout">
+              <Checkout />
+            </Accordion>
+          </div>
+          {/* End of Mobile Cart */}
         </div>
         <div className="col-12 col-md-5 col-lg-6">
           <div className="row">
