@@ -3,13 +3,12 @@ import React, { createContext, useEffect, useState } from "react";
 const ProductContext = createContext();
 
 const ProductContextProvider = ({ children }) => {
+  const limit = 8;
   const [products, setProducts] = useState([]);
   const [filteredProducts, setFilteredProducts] = useState([]);
-  const [loading, setLoading] = useState(false);
   const [brands, setBrands] = useState([]);
   const [model, setModel] = useState([]);
   const [page, setPage] = useState(1);
-  const [limit, setLimit] = useState(12);
   const [totalPage, setTotalPage] = useState(0);
   const [cart, setCart] = useState([]);
   const [filters, setFilters] = useState({
@@ -19,28 +18,32 @@ const ProductContextProvider = ({ children }) => {
     model: [],
   });
 
+  /**
+   * @description Applies the filters to the products.
+   * @returns {void}
+   */
   const applyFilters = () => {
     const { text, sort, brands, model } = filters;
     let tempProducts = [...products];
-    // filter based on text
+
     if (text) {
       tempProducts = tempProducts.filter((product) =>
         product.name.toLowerCase().startsWith(text)
       );
     }
-    // filter based on brands
+
     if (brands.length > 0) {
       tempProducts = tempProducts.filter((product) =>
         brands.includes(product.brand)
       );
     }
-    // filter based on model
+
     if (model.length > 0) {
       tempProducts = tempProducts.filter((product) =>
         model.includes(product.model)
       );
     }
-    // sort based on sort
+
     if (sort) {
       if (sort === "old-to-new") {
         tempProducts = tempProducts.sort(
@@ -63,25 +66,36 @@ const ProductContextProvider = ({ children }) => {
     setFilteredProducts(tempProducts);
   };
 
+  /**
+   * @description Returns the unique values of the given type.
+   * @param {Array} data - The array of products.
+   * @param {string} type - The type of value.
+   * @returns {Array} - The array of unique values.
+   */
   const getUniqueValues = (data, type) => {
     let unique = data.map((item) => item[type]);
     return [...new Set(unique)];
   };
 
+  /**
+   * @description Fetches the products from the API.
+   * @returns {void}
+   */
   const fetchProducts = async () => {
-    setLoading(true);
     try {
       const response = await fetch(process.env.REACT_APP_API_URL);
       const fetchedProducts = await response.json();
-      setLoading(false);
       setProducts(fetchedProducts);
       setFilteredProducts(fetchedProducts);
     } catch (error) {
-      setLoading(false);
       console.log(error);
     }
   };
 
+  /**
+   * @description Creates the filter content.
+   * @returns {void}
+   */
   const createFilterContent = () => {
     setBrands(getUniqueValues(products, "brand"));
     setModel(getUniqueValues(products, "model"));
@@ -107,7 +121,6 @@ const ProductContextProvider = ({ children }) => {
       value={{
         products,
         filteredProducts,
-        loading,
         brands,
         model,
         page,
@@ -119,9 +132,7 @@ const ProductContextProvider = ({ children }) => {
         applyFilters,
         setProducts,
         setFilteredProducts,
-        setLoading,
         setPage,
-        setLimit,
         setTotalPage,
         setCart,
         setFilters,

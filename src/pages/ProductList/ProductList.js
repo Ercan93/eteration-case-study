@@ -24,6 +24,11 @@ const ProductList = () => {
   } = useContext(ProductContext);
   const [listedProducts, setListedProducts] = useState([]);
 
+  /**
+   * Handles the checkbox filter event.
+   * @param {Object} e - The event object.
+   * @param {string} type - The type of filter.
+   */
   const checkboxFilterHandler = (e, type) => {
     const { checked, value } = e.target;
     const newFilters = { ...filters };
@@ -35,6 +40,10 @@ const ProductList = () => {
     setFilters(newFilters);
   };
 
+  /**
+   * Handles the sorting and filtering of products.
+   * @param {Event} e - The event object.
+   */
   const sortFilterHandler = (e) => {
     const { value } = e.target;
     const newFilters = { ...filters };
