@@ -14,16 +14,15 @@ const ProductDetail = () => {
   const navigate = useNavigate();
 
   useEffect(() => {
-    const product = products.find((product) => product.id === id);
-    if (!product) navigate("/404");
-    setProduct(product);
+    if (products.length === 0) {
+      fetchProducts();
+    } else {
+      const currentProduct = products.find((product) => product.id === id);
+      if (!currentProduct) navigate("/404");
+      setProduct(currentProduct);
+    }
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [id, products]);
-
-  useEffect(() => {
-    if (products.length === 0) fetchProducts();
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [products]);
 
   return (
     <div className="product-detail container-fluid">
